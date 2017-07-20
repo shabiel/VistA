@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #---------------------------------------------------------------------------
-# Copyright 2011-2013 The Open Source Electronic Health Record Agent
+# Copyright 2011-2017 The Open Source Electronic Health Record Agent
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -197,9 +197,10 @@ if $bootstrap; then
     ln -s /usr/bin/cpack28 /usr/bin/cpack
 fi
 
-# Clone repos
+# Clone repos - Dashboard
 if ! $skipTests; then
     cd /usr/local/src
+    rm -rf VistA-Dashboard
     git clone -q https://github.com/OSEHRA/VistA -b dashboard VistA-Dashboard
 fi
 
