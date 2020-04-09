@@ -208,7 +208,7 @@ begin
        if ICD10ImplDate > ADate then
          FICDVersion := 'ICD^ICD-9-CM'
        else
-         FICDVersion := '10D^ICD-10-CM';
+         FICDVersion := '10D^KCD7';
      end;
 
   if (Piece(FICDVersion, '^', 1) = '10D') then

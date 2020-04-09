@@ -302,13 +302,17 @@ begin
       mmoDesc.Lines.Text := SelectedNode.CodeDescription;
     end;
     if pnlCodeSys.Visible and (SelectedNode.CodeSys <> '') then begin
-      CodeTitle := SelectedNode.CodeSys + ':  ';
+      if SelectedNode.CodeSys = 'ICD-10-CM' then CodeTitle := 'KCD-7'
+      else CodeTitle := SelectedNode.CodeSys;
+      CodeTitle := CodeTitle + ': ';
     end;
     if mmoCode.Visible and (SelectedNode.Code <> '') then begin
       mmoCode.Lines.Text := SelectedNode.Code;
     end;
     if pnlTargetCodeSys.Visible and (SelectedNode.TargetCodeSys <> '') then begin
-      TargetTitle := SelectedNode.TargetCodeSys + ':  ';
+      if SelectedNode.TargetCodeSys = 'ICD-10-CM' then TargetTitle := 'KCD-7'
+      else TargetTitle := SelectedNode.TargetCodeSys;
+      TargetTitle := TargetTitle + ': ';
     end;
     if mmoTargetCode.Visible and (SelectedNode.TargetCode <> '') then begin
       mmoTargetCode.Lines.Text := SelectedNode.TargetCode;
